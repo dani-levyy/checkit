@@ -1,4 +1,13 @@
 import flatpickr from "flatpickr";
 
-flatpickr(".datepicker", {});
 
+document.addEventListener('turbolinks:load', () => {
+  // Call your JS functions here
+  const datepicker = document.querySelector(".datepicker")
+
+  if (datepicker) {
+    flatpickr(".datepicker", {
+    })
+  }
+
+});

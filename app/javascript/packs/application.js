@@ -21,7 +21,7 @@ require("channels")
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
-// Flat picker
+// Datepicker
 import "../plugins/flatpickr"
 // External imports
 import "bootstrap";

@@ -18,7 +18,7 @@ class ItemsController < ApplicationController
     @item.user = current_user
      if @item.save
       flash[:notice] = "Thanks! Your item has been added."
-      redirect_to root_path
+      redirect_to items_path
     else
       render :new
     end
@@ -30,12 +30,9 @@ class ItemsController < ApplicationController
     redirect_to root_path
   end
 
-
 private
-
-def item_params
-  params.require(:item).permit(:name, :category, :expires, :purchased)
-end
-
+  def item_params
+    params.require(:item).permit(:name, :category, :expires, :purchased)
+  end
 end
 
