@@ -15,6 +15,7 @@
       <%= item.category %>
       <%= item.purchased %>
       <%= item.expires %>
+      <%= link_to 'delete',  item_path(item), method: :delete, data: { confirm: 'Are you sure?' } %>
       </div>
     <% end %>
   </div>

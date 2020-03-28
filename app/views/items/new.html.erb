@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row justify-content-center py-3">
+    <div class="col-8">
+      <%= simple_form_for(@item) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :category, collection: Item::CATEGORIES  %>
+        <%= f.input :purchased, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.input :expires, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
