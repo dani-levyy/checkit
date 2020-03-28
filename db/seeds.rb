@@ -9,6 +9,7 @@ puts 'Creating 15 fake items...'
 15.times do
   item = Item.new(
     name:    Faker::Food.ingredient,
+    category: "Canned",
     purchased: Time.now,
     expires:  Time.now + 365.days,
     user_id: 1
