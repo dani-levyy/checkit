@@ -1,36 +1,30 @@
-<div class="container">
-  <div class="navbar navbar-expand-sm">
-    <div class="nav-logo">
-      <%= link_to root_path, class: "navbar-brand" do %>
-        <i class="fas fa-shopping-basket"></i>
+<div class="navbar d-flex align-items-center">
+  <div class="nav-logo">
+    <%= link_to root_path, class: "navbar-brand" do %>
+    <p class="logo-p1">check<i class="fas fa-utensils"></i><p class="logo-p2">it</p>
+    <% end %>
+  </div>
+
+  <div class="nav-menu" id="navbarSupportedContent">
+    <ul class="nav">
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to "Cupboard", items_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Add Item", new_item_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "sign in", new_user_session_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "sign up", new_user_registration_path, class: "nav-link" %>
+        </li>
       <% end %>
-
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to "Cupboard", items_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item active">
-            <%= link_to "Add Item", new_item_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
-          </li>
-        <% else %>
-          <li class="nav-item active">
-            <%= link_to "sign in", new_user_session_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "sign up", new_user_registration_path, class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+    </ul>
   </div>
 </div>

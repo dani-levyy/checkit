@@ -1,4 +1,22 @@
 .navbar {
-  justify-content: space-between;
   background: transparent;
+}
+
+.navbar-brand {
+  margin: 0px;
+  display: flex;
+}
+
+.logo-p1 {
+  margin: 0px;
+  color: $primary;
+}
+
+.logo-p2 {
+  margin: 0px;
+  color: $primary;
+}
+
+.fas.fa-utensils {
+  color: $pink;
 }
