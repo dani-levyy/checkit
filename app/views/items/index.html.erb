@@ -1,20 +1,32 @@
 <div class="container">
-  <div class="search-bar">
-    <%= form_tag items_path, method: :get ,class: "form-inline" do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Search items"%>
-    <%= submit_tag "Search", class: "btn btn-primary btn-sm" %>
-    <% end %>
+
+  <div class="header">
+    <div class="search-bar">
+      <%= form_tag items_path, method: :get ,class: "form-inline" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Search items"%>
+      <%= submit_tag "Search", class: "btn btn-primary btn-sm" %>
+      <% end %>
+    </div>
+
+    <div class="item-count">
+      <% if @items.empty? %>
+        <p>Didn't find anything 😕</p>
+      <% else %>
+        <p>You've got <%= pluralize(@items.count, 'item') %> in your cupboard!</p>
+      <% end %>
+    </div>
   </div>
+
   <div class="cards">
     <% @items.each do |item| %>
       <div class="card-holder">
-      <%= item.name %>
-      <%= item.category %>
-      <%= item.purchased %>
-      <%= item.expires %>
+      <%= item.name.capitalize %>
+      <%= item.category.capitalize %>
+      <%= item.purchased.strftime("Purchased: %m/%d/%Y") %>
+      <%= item.expires.strftime("Expires: %m/%d/%Y") %>
       <%= link_to 'delete',  item_path(item), method: :delete, data: { confirm: 'Are you sure?' } %>
       </div>
     <% end %>
