@@ -7,13 +7,13 @@
         params[:query],
         class: "form-control",
         placeholder: "Search items"%>
-      <%= submit_tag "Search", class: "btn btn-primary btn-sm" %>
+      <%= submit_tag "Search", class: "btn btn-primary btn-md" %>
       <% end %>
     </div>
 
     <div class="item-count">
       <% if @items.empty? %>
-        <p>Didn't find anything 😕</p>
+        <p>Hello, <%= @user.first_name.capitalize %>! Your cupboard is empty. <%= link_to "Add an item", new_item_path, class: "add-btn" %> 😄</p>
       <% else %>
         <p>You've got <%= pluralize(@items.count, 'item') %> in your cupboard!</p>
       <% end %>
@@ -23,11 +23,22 @@
   <div class="cards">
     <% @items.each do |item| %>
       <div class="card-holder">
-      <%= item.name.capitalize %>
-      <%= item.category.capitalize %>
-      <%= item.purchased.strftime("Purchased: %m/%d/%Y") %>
-      <%= item.expires.strftime("Expires: %m/%d/%Y") %>
-      <%= link_to 'delete',  item_path(item), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= image_tag "canned.jpg", alt: "alttext" %>
+        <div class="card-top">
+          <h5><%= item.name.capitalize %></h5>
+          <h6><%= item.category.capitalize %></h6>
+        </div>
+        <div class="card-bottom">
+          <div class="card-bottom-info">
+            <p><%= item.purchased.strftime("Purchased: %m/%d/%Y") %></p>
+            <p><%= item.expires.strftime("Expires: %m/%d/%Y") %></p>
+            <% days_left = (item.expires - Time.now).to_i / 86400 %>
+            <p><%= days_left %> days left</p>
+          </div>
+          <div class="index-card-buttons">
+            <%= link_to '', item_path(item), method: :delete, data: { confirm: 'Are you sure?' }, class: "fas fa-trash-alt" %>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>

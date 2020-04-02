@@ -1,0 +1,30 @@
+.cards {
+
+}
+
+.card-top {
+  margin: 8px 16px;
+}
+
+.fas.fa-trash-alt {
+  color: $pink;
+  font-size: 24px;
+  padding-top: 52px;
+}
+
+.fas.fa-trash-alt:hover {
+  color: #FF0000;
+  transition: .4s;
+}
+
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 16px;
+
+}
+.card-bottom-info > p{
+  margin-bottom: 4px;
+
+}
