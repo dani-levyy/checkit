@@ -1,3 +1,5 @@
+
+<%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
 <div class="container">
 
   <div class="header">
@@ -43,3 +45,6 @@
     <% end %>
   </div>
 </div>
+<%= pie_chart @items.group_by(:category).count %>
+<!--
+<%= pie_chart(@data) %> -->

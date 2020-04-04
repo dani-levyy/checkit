@@ -9,6 +9,7 @@ before_action :find_user
       @items = Item.where(sql_query, query: "%#{params[:query]}%")
     else
       @items = Item.where(user_id: @user)
+      # @data = Item.group(:category).count
       @items = @items.order(:created_at).reverse
     end
   end
