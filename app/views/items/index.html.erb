@@ -1,7 +1,5 @@
-
-<%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
+<script type="text/javascript" src="{{ URL::asset('js/chartkick.js') }}"></script>
 <div class="container">
-
   <div class="header">
     <div class="search-bar">
       <%= form_tag items_path, method: :get ,class: "form-inline" do %>
@@ -45,6 +43,8 @@
     <% end %>
   </div>
 </div>
-<%= pie_chart @items.group_by(:category).count %>
+<div class="stat">
+<%= pie_chart Item.group(:category).count %>
+</div>
 <!--
 <%= pie_chart(@data) %> -->
