@@ -4,7 +4,26 @@
 //   border-radius: 24px;
 //   height: calc(100vh - 48px);
 // }
+
 .footer-container {
   position: fixed;
   bottom: 0;
+}
+
+#homepage-img {
+  height: 500px;
+  width: 500px;
+}
+
+.home-info-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.home-container {
+  padding: 16px 32px;
+}
+
+.home-words {
+  padding: 5% 5%;
 }

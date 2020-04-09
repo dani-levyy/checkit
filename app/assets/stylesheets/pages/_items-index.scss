@@ -1,11 +1,35 @@
-.cards {
+.container {
+  padding: 16px 70px;
+}
 
+.cards-grid {
+  margin: 24px 0;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-gap: 32px;
+}
+
+.index-pg-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+  align-items: baseline;
 }
 
 .card-top {
   margin: 8px 16px;
 }
 
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 16px;
+
+}
+.card-bottom-info > p{
+  margin-bottom: 4px;
+}
+// delete button on cards
 .fas.fa-trash-alt {
   color: $pink;
   font-size: 24px;
@@ -17,14 +41,9 @@
   transition: .4s;
 }
 
-
-.card-bottom {
-  display: flex;
-  justify-content: space-between;
-  margin: 8px 16px;
-
+.cards-container {
+  overflow: scroll;
+  height: 82vh;
+  padding: 16px;
 }
-.card-bottom-info > p{
-  margin-bottom: 4px;
 
-}

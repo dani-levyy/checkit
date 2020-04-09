@@ -1,10 +1,5 @@
-.cards {
-  margin: 24px 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 32px;
-}
 
+// cards on items index page
 .card-holder {
   overflow: hidden;
   background: white;
@@ -18,14 +13,11 @@
   object-fit: cover;
 }
 
+// cards for log in and sign up
 .signup-login {
-  margin: 24px auto;
+  margin: 50px auto;
   background-color: #FFFFFF;
-  padding-right: 48px;
-  padding-left: 48px;
-  padding-top: 32px;
-  padding-bottom: 32px;
-  margin-bottom: 16px;
+  padding: 32px 48px;
   border-radius: 4px;
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
   width: 450px;
