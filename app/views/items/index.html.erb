@@ -33,7 +33,11 @@
               <p><%= item.purchased.strftime("Purchased: %m/%d/%Y") %></p>
               <p><%= item.expires.strftime("Expires: %m/%d/%Y") %></p>
               <% days_left = (item.expires - Time.now).to_i / 86400 %>
-              <p><%= days_left %> days left</p>
+              <% if days_left.negative? %>
+                <p>Expired</p>
+              <% else %>
+                <p><%= pluralize(days_left, 'day') %> left</p>
+              <% end %>
             </div>
             <div class="index-card-buttons">
               <%= link_to '', item_path(item), method: :delete, data: { confirm: 'Are you sure?' }, class: "fas fa-trash-alt" %>

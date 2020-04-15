@@ -13,6 +13,6 @@ protected
   end
 
   def after_sign_in_path_for(resource)
-    items_path #your path
+    items_path
   end
 end

@@ -9,7 +9,7 @@ require("turbolinks").start()
 require("channels")
 require("chartkick")
 require("chart.js")
-
+require("sweetalert2")
 //= require chartkick
 
 
@@ -38,3 +38,6 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 });
+
+
+
