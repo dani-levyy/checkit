@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="stat-container">
+    <% if @items.empty? %>
+      <p> Your cupboard is empty </p>
+    <% else %>
+      <h5>You've got <%= pluralize(@items.count, 'item') %> in your cupboard!</h5>
+      <p>The last added item was on <%= @items.last.created_at.strftime("%A, %B %e, %Y") %></p>
+      <%= pie_chart @items.group(:category).count, colors: ["#8D54C6","#EC51B2","#FBDB94","#5BCCA0","#5AD8F9"] %>
+    <% end %>
+  </div>
+</div>

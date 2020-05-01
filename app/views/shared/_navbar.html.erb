@@ -12,6 +12,9 @@
           <%= link_to "Cupboard", items_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
+          <%= link_to "Stats", statistics_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
           <%= link_to "Add Item", new_item_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
@@ -22,11 +25,7 @@
           <li class="nav-item">
             <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>
           </li>
-          <li class="nav-item">
-            <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
-          </li>
         <% end %>
-
         <% if current_page?(new_user_registration_path) %>
           <li class="nav-item">
             <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>

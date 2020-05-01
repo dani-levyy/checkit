@@ -1,13 +1,16 @@
 import swal from 'sweetalert2';
 
-
-initSweetalert('#sweet-alert-demo', {
+document.querySelector(".fas.fa-trash-alt").addEventListener('click', function(){
+swal({
   title: "Are you sure?",
-  text: "This action cannot be reversed",
-  icon: "warning"
-}, (value) => {
-  if (value) {
-    const link = document.querySelector('#delete-link');
-    link.click();
-  }
+  text: "Your will not be able to recover this imaginary file!",
+  type: "warning",
+  showCancelButton: true,
+  confirmButtonClass: "btn-danger",
+  confirmButtonText: "Yes, delete it!",
+  closeOnConfirm: false
+},
+function(){
+  swal("Deleted!", "Your imaginary file has been deleted.", "success");
+});
 });

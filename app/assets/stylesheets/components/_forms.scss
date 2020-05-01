@@ -2,3 +2,12 @@ form abbr[title] {
   border-bottom: none !important;
   text-decoration: none !important;
 }
+
+.signup-login-form {
+  background-color: white;
+  max-width: 380px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  border-radius: 2px;
+}

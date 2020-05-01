@@ -4,7 +4,6 @@
       <% if @items.empty? %>
         <p>Hello, <%= @user.first_name.capitalize %>! Your cupboard is empty. <%= link_to "Add an item", new_item_path, class: "add-btn" %> 😄</p>
       <% else %>
-        <h5>You've got <%= pluralize(@items.count, 'item') %> in your cupboard!</h5>
       <% end %>
     </div>
 
@@ -40,14 +39,11 @@
               <% end %>
             </div>
             <div class="index-card-buttons">
-              <%= link_to '', item_path(item), method: :delete, data: { confirm: 'Are you sure?' }, class: "fas fa-trash-alt" %>
+              <%= link_to '', item_path(item), method: :delete, class: "fas fa-trash-alt" %>
             </div>
           </div>
         </div>
       <% end %>
     </div>
   </div>
-</div>
-<div class="stat">
-<%= pie_chart(@data) %>
 </div>

@@ -1,0 +1,28 @@
+.create-account-btn {
+    border-radius: 2px;
+    color: white !important;
+    background-color: #7359BE;
+    text-transform: uppercase;
+    letter-spacing: .15rem;
+    transition: all .3s;
+    z-index: 1;
+    width: 100%;
+    opacity: 0.6;
+    &:hover {
+      opacity: 1
+    }
+}
+
+.login-btn {
+  border-radius: 2px;
+  color: white !important;
+  background-color: #7359BE;
+  text-transform: uppercase;
+  letter-spacing: .15rem;
+  transition: all .3s;
+  z-index: 1;
+  width: 100%;
+  &:hover {
+    opacity: .6
+  }
+}
